@@ -28,6 +28,7 @@ var defaultPins = [
     }
 ];
 
+openWindows = [];
 //============VIEW============//
 var map;
 var CLIENT_ID = "WRADQOL10MYGJETLNKXVMSPYUC2QVOUSEU5WLF5GGMVUI0H5";
@@ -73,9 +74,16 @@ var LocationService = function(data){
         return true;
     }, this);
     this.marker.addListener('click', function(){
+        for(x = 0; x<openWindows.length; x++) {
+            openWindows[x].infowindow.close();
+            openWindows[x].marker.setAnimation(null);
+        }
+        openWindows.push(self);
         self.urlString = "<a href =" + self.url + " target='_blank'>" + self.url + "</a>";
         self.infowindow.setContent(self.urlString);
         self.infowindow.open(map, this);
+        
+        console.log(openWindows);
         self.marker.setAnimation(google.maps.Animation.BOUNCE);
     });
     this.openMarker = function(place){

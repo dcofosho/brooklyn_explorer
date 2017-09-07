@@ -10,7 +10,7 @@
 <input class="search-box" id="search-box" data-bind="textInput: searchText, valueUpdate: 'afterkeydown'" />
 <span>
 <ul class="list" data-bind="foreach:filteredPins">
-	<li data-bind="text:title, click:openMarker"></li>
+	<button data-bind="text:title, click:openMarker">
 </ul>
 <div class="map" id="map"></div>
 </span>
