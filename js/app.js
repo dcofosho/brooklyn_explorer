@@ -12,6 +12,16 @@ var defaultPins = [
         lng: -73.976844
     },
     {
+        title: "Melody Lanes Bowling",
+        lat: 40.652783,
+        lng: -74.0051327
+    },
+    {
+        title: "Music Hall of Williamsburg",
+        lat: 40.7191281,
+        lng: -73.9639286
+    },
+    {
         title: "Prospect Park",
         lat: 40.6642882,
         lng: -73.9629868
@@ -22,9 +32,95 @@ var defaultPins = [
         lng: -73.979768
     },
     {
+    	title: "Luigi's Pizza",
+    	lat: 40.6613891,
+    	lng: -73.9919883
+    },
+    {
+    	title: "Brothers Pizza",
+    	lat: 40.6626746,
+    	lng: -73.9950759
+    },
+    {
+    	title: "Artichoke Basille's Pizza",
+    	lat: 40.6809066,
+    	lng: -73.9792659
+    },
+    {
         title: "Giovanni's Brooklyn Eats",
         lat: 40.6683481,
         lng: -73.9754816
+    },
+    {
+        title: "Prime Meats Restaurant",
+        lat: 40.6875495,
+        lng: -73.9972692
+    },
+    {
+        title: "La Palina Restaurant",
+        lat: 40.6109601,
+        lng: -73.9810417
+    },
+    {
+    	title: "Royal Palm's Shuffleboard Club",
+    	lat: 40.6770025,
+    	lng:-73.9889047
+    },
+    {
+    	title: "Ample Hills Creamery",
+    	lat: 40.6770385,
+    	lng: -74.0038115
+
+    },
+    {
+    	title: "Sunset Park Diner",
+    	lat: 40.6512961,
+    	lng: -74.005888
+    },
+    {
+    	title: "Zaytoons Cafe",
+    	lat: 40.6812666,
+    	lng: -73.9980409
+    },
+    {
+    	title: "Fatty Daddy Tacos",
+    	lat: 40.6691746,
+    	lng: -73.9888422
+    },
+    {
+    	title: "Rachel's Taqueria",
+    	lat: 40.6702137,
+    	lng: -73.9854422
+    },
+    {
+    	title: "New Kiku Sushi",
+    	lat: 40.6664918,
+    	lng: -73.9848066
+    },
+    {
+    	title: "Calexico",
+    	lat: 40.6746577,
+    	lng: -73.9871771
+    },
+    {
+    	title: "Dinosaur Bar-B-Que",
+    	lat: 40.6746988,
+    	lng: -73.9872853
+    },
+    {
+    	title: "Luna Park",
+    	lat: 40.57291,
+    	lng: -73.9809569
+    },
+    {
+    	title: "Nathan's Famous",
+    	lat: 40.57291,
+    	lng: -73.9809569
+    },
+    {
+    	title: "Coney Island Beach and Boardwalk",
+    	lat: 40.57291,
+    	lng: -73.9809569
     }
 ];
 
@@ -48,7 +144,7 @@ var LocationService = function(data){
     $.getJSON(foursquare).done(function(data){
         var results = data.response.venues[0];
         self.url = results.url;
-        
+        console.log(self);
     }).fail( function(){
         alert("Failed to retrieve data from Foursquare");
     }
